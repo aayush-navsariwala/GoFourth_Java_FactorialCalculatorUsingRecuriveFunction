@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
-public class FactorialCalculator {
-
+public class FactorialCalculator 
+{
     //Recursive method to calculate factorial
-    public static long calculateFactorial(int n) {
+    public static long calculateFactorial(int n) 
+    {
         //Base case: factorial of 0 is 1
-        if (n == 0) {
+        if (n == 0) 
+        {
             return 1;
         }
         //Recursive case
@@ -13,25 +15,39 @@ public class FactorialCalculator {
     }
 
     //Main method
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner scanner = new Scanner(System.in);
         int number = -1;
 
         //Prompt the user for input
-        System.out.print("Enter a non-negative integer: ");
+        while (true) 
+        {
+            System.out.print("Enter a non-negative integer: ");
 
-        //Validate user input
-        if (scanner.hasNextInt()) {
-            number = scanner.nextInt();
-            if (number < 0) {
-                System.out.println("Error: Please enter a non-negative integer.");
-            } else {
-                long result = calculateFactorial(number);
-                System.out.println("Factorial of " + number + " is: " + result);
+            //Check if input is a valid integer
+            if (scanner.hasNextInt()) 
+            {
+                number = scanner.nextInt();
+                if (number < 0) 
+                {
+                    System.out.println("Error: Please enter a non-negative integer.");
+                } 
+                else 
+                {
+                    break; 
+                }
+            } 
+            else 
+            {
+                System.out.println("Error: Invalid input. Please enter a valid non-negative integer.");
+                scanner.next(); 
             }
-        } else {
-            System.out.println("Error: Invalid input. Please enter a valid non-negative integer.");
         }
+
+        long result = calculateFactorial(number);
+        System.out.println("Factorial of " + number + " is: " + result);
+
         scanner.close();
     }
 }
