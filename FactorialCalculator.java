@@ -19,5 +19,17 @@ public class FactorialCalculator {
         //Prompt the user for input
         System.out.print("Enter a non-negative integer: ");
         int number = scanner.nextInt();
+
+        //Validate user input
+        if (number < 0) {
+            System.out.println("Factorial is not defined for negative numbers.");
+        }
+        else 
+        {
+            long result = calculateFactorial(number);
+            System.out.println("Factorial of " + number + " is:" + result);
+        }
+
+        scanner.close();
     }
 }
