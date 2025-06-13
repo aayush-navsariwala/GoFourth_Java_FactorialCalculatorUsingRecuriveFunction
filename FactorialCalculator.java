@@ -32,7 +32,6 @@ public class FactorialCalculator {
         } else {
             System.out.println("Error: Invalid input. Please enter a valid non-negative integer.");
         }
-
         scanner.close();
     }
 }
