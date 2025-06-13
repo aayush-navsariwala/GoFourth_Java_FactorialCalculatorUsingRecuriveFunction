@@ -11,4 +11,13 @@ public class FactorialCalculator {
         //Recursive case
         return n * calculateFactorial(n - 1);
     }
+
+    //Main method
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //Prompt the user for input
+        System.out.print("Enter a non-negative integer: ");
+        int number = scanner.nextInt();
+    }
 }
